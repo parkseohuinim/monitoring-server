@@ -9,9 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chart.js": "^4.4.1",
     "firebase": "^10.8.0",
     "next": "14.1.0",
     "react": "^18",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
     "sass": "^1.71.0",
     "swr": "^2.2.5"
