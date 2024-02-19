@@ -1,5 +1,5 @@
 'use client'
-import styles from '../../user/user.module.css'
+import styles from '@/styles/module/user.module.css'
 import UserTable from './userTable'
 import { useUserList } from '../../hooks/useUseList'
 
