@@ -1,0 +1,31 @@
+.tooltip {
+  width: 80px;
+  position: absolute;
+  background: #ffd151;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 10px 5px 10px;
+  border-radius: 10px;
+  z-index: 500;
+  transition: 0.2s;
+  opacity: 0;
+  visibility: hidden;
+  top: -44px;
+  text-align: center;
+  &.active {
+    transition: 0.3s;
+    opacity: 1;
+    visibility: visible;
+  }
+  &::before {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    width: 10px;
+    height: 10px;
+    content: '';
+    background: #ffd151;
+    z-index: 499;
+  }
+}

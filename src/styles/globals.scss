@@ -1,4 +1,695 @@
-@import './variables.scss';
-.c-primary {
-    color: $primary-color;
+@import '@/styles/var.scss';
+@import '@/styles/font.scss';
+@import '@/styles/text.scss';
+@import '@/styles/table.scss';
+@import '@/styles/input.scss';
+@import '@/styles/tab.scss';
+@import '@/styles/button.scss';
+@import '@/styles/list.scss';
+@import '@/styles/tooltip.scss';
+@import '@/styles/chart.scss';
+html {
+  font-size: 16px;
+  line-height: 1.2;
+  font-family: 'NotoSansKR';
+  font-weight: normal;
+  color: #222;
+  scroll-behavior: smooth;
+  background: $-c-white;
+  min-width: 360px;
+  * {
+    box-sizing: border-box;
+  }
+  overflow-y: overlay;
 }
+body {
+  background: #fff;
+  min-height: 100vh;
+  // background-attachment: fixed;
+  .wrap {
+    min-height: calc(100vh - 400px);
+    padding: 20px 20px;
+  }
+}
+button {
+  cursor: pointer;
+}
+h1,h2,h3,h4,h5,h6,p,strong,b,u,em,i,a {line-height: 1.5;}
+::-webkit-scrollbar {
+  width: 15px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  width: 15px;
+  border-radius: 15px;
+  border: 1px solid darkgrey;
+  // background: url('/images/bg/galaxy.gif');
+  background: #000;
+  background-size: 60%;
+  background-position: 0%;
+  background-attachment: fixed;
+}
+
+.t-right {text-align: right;}
+.t-left {text-align: left;}
+.t-center {text-align: center;}
+
+// .onlyPC {display: block;}
+// .onlyTab {display: none!important;}
+.onlySP {display: none!important;}
+@media(max-width: $breakPoint) {
+  .onlyPC {display: none!important;}
+  .onlySP {display: block!important;}
+}
+.onlyTab {
+  display: block;
+  @media(max-width: $breakPoint2) {
+    display: none!important;
+  }
+}
+
+.d-flex {display: flex;}
+.d-block {display: block;}
+.d-inline-block {display: inline-block;}
+.d-inline {display: inline;}
+
+.justify-center {justify-content: center;}
+.justify-space-around {justify-content: space-around;}
+.justify-space-between {justify-content: space-between;}
+
+.opacity0 {opacity: 0!important;visibility: hidden!important;}
+
+h1,h2,h3,h4,h5,h6 {
+  line-height: 1.5;
+  color: #222;
+}
+p {
+  font-size: 1rem;
+  color: #222;
+}
+b, strong {
+  font-weight: bold;
+}
+.txt {
+  margin-top: 10px;
+}
+/* title */
+.title-01,.title-02,.title-03,.title-04,.title-05,.title-06 {font-weight: 900; color: $-c-black;font-family: GangwonEduPowerExtraBoldA;}
+.title-01 {
+  font-size: 2.3rem;
+  line-height: 1.5;
+  margin-top: 30px;
+}
+.title-02 {
+  font-size: 3rem;
+  line-height: 1.5;
+  margin-top: 25px;
+  @media(max-width:$breakPoint){
+    font-size: 1.8rem;
+  }
+}
+.title-03 {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-top: 32px;
+  text-align: center;
+  @media(max-width:$breakPoint){
+    font-size: 1.375rem;
+  }
+}
+.title-04 {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin-top: 20px;
+  text-align: center;
+}
+.title-05 {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  margin-top: 20px;
+  text-align: center;
+}
+.title-06 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.t-red {
+  color: #b62200;
+}
+.t-blue {
+  color: #0076b6;
+}
+.t-white {
+  color: $-c-white;
+}
+.t-black {
+  color: $-c-black;
+}
+.t-bold {
+  font-weight: bold;
+}
+.t-light {
+  font-weight: 300;
+}
+.t-center {
+  text-align: center;
+}
+
+.d-block {
+  display: block;
+}
+
+.f-right {
+  float: right;
+}
+.title-area {
+  display: block;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 20%;
+    @media(max-width:$breakPoint){
+      padding-left: 0;
+      padding-right: 0;
+    }
+    h4, p {
+      font-size: 0.92rem;
+      line-height: 1.8;
+      @media(max-width:$breakPoint){
+        font-size: 0.88rem;
+      }
+    }
+    h4 {
+      font-size: 1.1rem;
+      padding-left: 20px;
+      font-weight: 900;
+      border-left: 3px solid #d2b369;
+    }
+    p {
+      font-size: 0.92rem;
+      text-align: right;
+      &:first-of-type {
+        margin-top: 10px;
+      }
+    }
+}
+.title-area--title {
+  padding-left: 20px;
+  border-left: 3px solid #d2b369;
+  h4 {
+    border: none;
+  }
+  h4, p {
+    padding-left: 0;
+    text-align: left;
+  }
+}
+
+
+
+.ly-flex {
+  display: flex;
+  & > div {
+    flex: 1;
+  }
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+.align-center {
+  align-items: center;
+}
+
+
+.section {
+  max-width: $breakPoint3;
+  margin: auto;
+  margin-top: 50px;
+  padding: 24px 50px 50px;
+  border-radius: 30px;
+  background: rgba(200,200,200,0.25);
+  @media(max-width: $breakPoint3) {
+    padding: 18px 30px 43px;
+    max-width: calc(100vw - 20px);
+  }
+}
+.hidden {width: 0; height: 0; opacity: 0; user-select: none; overflow: hidden;}
+.img-box {
+  perspective: 200px;
+  display: block;
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
+
+.img-flip {
+  position: relative;
+  transition: 0.75s;
+  transform-style: preserve-3d;
+  img {
+    position: relative;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, .15);
+    backface-visibility: hidden;
+    border-radius: 50%;
+  }
+  &::before {
+    content: 'Seoul\A Korea';
+    white-space: pre;
+    color: #fff;
+    line-height: 1.5;
+    position: absolute;
+    display: block;
+    top: 50%;
+    left: 50%;
+    width: auto;
+    height: auto;
+    border-radius: 50%;
+    transform: rotateY(180deg) translate(50%,-50%);;
+    backface-visibility: hidden;
+    z-index: 3;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #000;
+    background-size: contain;
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, .15);
+    transform: rotateY(180deg) scaleX(-1);
+    filter: brightness(0.3) hue-rotate(340deg) saturate(70%);
+    backface-visibility: hidden;
+    z-index: 2;
+  }
+  &:hover {
+    transform: rotateY(180deg);
+  }
+}
+
+.table {
+  margin-top: 20px;
+  table {
+    table-layout: fixed;
+    width: 100%;
+    caption {width: 0; height: 0; opacity: 0; user-select: none; overflow: hidden;}
+    colgroup {
+      col {width: 175px;}
+      col:nth-of-type(2) {width: calc(50% - 175px);}
+      col:nth-of-type(4) {width: calc(50% - 175px);}
+      @media(max-width:413px) {
+        col {width: 120px;}
+        col:nth-of-type(2),col:nth-of-type(4) {width: 0;}
+      }
+    }
+    thead {
+      tr {
+        th {
+          text-align: center;
+          font-weight: bold;
+          font-size: 1.5rem;
+          padding: 15px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        th {
+          height: 60px;
+          position: relative;
+          vertical-align: middle;
+          display: table-cell;
+          font-weight: 900;
+          
+          .th-wrap {
+            justify-content: flex-start;
+            align-items: center;
+            display: flex;
+            .th-img {
+              display: block;
+              margin: auto;
+              width: 60px;
+              height: auto;
+              padding: 8px;
+              filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.95));
+              &.filter-type2 {
+                filter: drop-shadow(0px 0px 5px rgba(121, 50, 125, 0.95));
+              }
+            }
+            .th-title {
+              width: 175px;
+              padding-left: 5px;
+              font-size: 1.05rem;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+              word-break: break-word;
+              @media(max-width:413px) {
+                font-size: 0.865rem;
+                padding: 8px 6px 8px 0;
+              }
+            }
+          }
+          
+        }
+        td {
+          overflow: hidden;
+          font-size: 1.3rem;
+          vertical-align: middle;
+          padding: 12px 12px 12px 5px;
+          // height: 60px;
+          @media(max-width:413px) {
+            padding: 12px 5px 12px 0
+          }
+          .td-desc {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            white-space: break-spaces;
+            word-break: break-all;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+  }
+  &.type2 {
+    table {
+      colgroup {
+        col {width: 140px;}
+        col:nth-of-type(2) {width: calc(100% - 140px);}
+      }
+      tbody {
+        tr {
+          th {
+            text-align: left;
+            height: unset;
+            font-size: 1.3rem;
+            font-weight: 900;
+            display: table-cell;
+            @media(max-width:$breakPoint){
+              padding-top: 1px;
+            }
+          }
+          td {
+            font-size: 1rem;
+            height: 45px;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+    
+  }
+}
+
+.dl {
+  dt {
+    font-size: 1.3rem;
+    font-weight: 900;
+    font-family: GangwonEduPowerExtraBoldA;
+    &:not(:first-of-type) {
+      margin-top: 20px;
+    }
+  }
+  dd {
+    margin-top: 20px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+}
+
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+  transition: all 0.25s ease-in-out;
+  .modal-dimmed {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, .6);
+  }
+  .modal-content {
+    position: absolute;
+    bottom: -100%;
+    width: 100%;
+    background: rgba(200,200,200,0.75);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    max-height: calc(100% - 50px);
+    padding: 20px 20px;
+    padding-bottom: 16px;
+    transition: bottom 0.2s ease-in-out;
+    /* iPhone X 이하일 때 */
+    @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: portrait),
+    only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+        padding-bottom: calc(constant(safe-area-inset-bottom) + 16px);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 16px);
+      /* iPhone X 이상일 때 */
+      @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait),
+      only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: landscape) {
+        padding-bottom: calc(constant(safe-area-inset-bottom) + 0px);
+        padding-bottom: calc(env(safe-area-inset-bottom) + 0px);
+      }
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 900;
+    }
+    .modal-button {
+      margin-top: 25px;
+      width: 100%;
+      button {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 15px 0;
+        border: none;
+        font-size: 18px;
+        font-weight: 900;
+        color: $-c-white;
+        border-radius: 8px;
+        background: #4b2765;
+      }
+    }
+  }
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    .modal-content {
+      bottom: 0;
+    }
+  }
+  pre {
+    white-space: pre;
+    line-height: 1.5;
+  }
+}
+
+.form-underlined {
+  input {
+    font-size: 20px;
+    padding: 7px;
+    border: none;
+    background: transparent;
+    border-bottom: 2px solid $-c-black;
+    font-weight: bold;
+    &:focus {
+      outline: none;
+      background: rgba(0, 0, 0, 0.2);
+    }
+  }
+  &.dark {
+    input {
+      border-bottom: 2px solid #a3a3bf;
+      color: $-c-white;
+      &::placeholder {
+        color: #a3a3bf;
+      }
+      &:focus {
+        background: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+// sizing -------------------
+@function size($start, $end) {
+  $size: ();
+  @for $i from $start through $end {
+    $value: $i + 0;
+    $size: append($size, $value);
+  }
+  @return $size;
+}
+$size: size(0, 100);
+/*******************************************************************************
+    Generate Spacing
+*******************************************************************************/
+
+// Padding, Margin 정의
+// p는 padding, m은 margin을 나타냄.
+// t는 상단 b는 하단 l은 왼쪽 r은 오른쪽의 방향
+// ex )
+//  pt-10 => padding-top:10px
+//  mb-22 => margin-bottom: 22px
+
+$position: (
+  "l": "left",
+  "r": "right",
+  "t": "top",
+  "b": "bottom",
+  "x": "left",
+  "y": "top"
+);
+$spacingNameMap: (
+  "m": "margin",
+  "p": "padding",
+);
+
+@mixin generate($spacingNameMap: (), $position: (), $size: ()) {
+  @each $preKey, $preValue in $spacingNameMap {
+    @each $px in $size {
+      .#{$preKey}-#{$px} {
+        #{$preValue}: #{$px}px !important;
+      }
+      @each $sufKey, $sufValue in $position {
+        .#{$preKey}#{$sufKey}-#{$px} {
+          @if $sufKey == x {
+            #{$preValue}-left: #{$px}px !important;
+            #{$preValue}-right: #{$px}px !important;
+          }@else if $sufKey == y{
+            #{$preValue}-top: #{$px}px !important;
+            #{$preValue}-bottom: #{$px}px !important;
+          }@else{
+              #{$preValue}-#{$sufValue}: #{$px}px !important;
+            }
+
+          }
+      }
+    }
+  }
+}
+
+@include generate($spacingNameMap, $position, $size);
+
+$position: (
+  "left",
+  "right",
+  "top",
+  "bottom",
+);
+@mixin generate($position: (), $size: ()) {
+  @each $eachPosition in $position {
+    @each $px in $size {
+      .#{$eachPosition}-#{$px} {
+        #{$eachPosition}: #{$px}px !important;
+      }
+      .#{$eachPosition}-m#{$px} {
+        #{$eachPosition}: -#{$px}px !important;
+      }
+    }
+  }
+}
+
+@include generate($position, $size);
+.m-auto {margin: auto !important;}
+
+/*******************************************************************************
+    Generate Width
+*******************************************************************************/
+
+// Width 정의
+// ex )
+// w-10 => width:10%
+// w-56 => width:56%
+
+$widthNameMap: (
+  "w": "width",
+);
+@mixin generate($widthNameMap: (), $size: ()) {
+  @each $preKey, $preValue in $widthNameMap {
+    @each $percent in $size {
+      .#{$preKey}-#{$percent} {
+        #{$preValue}: #{$percent}#{'%'} !important;
+      }
+    }
+  }
+}
+@include generate($widthNameMap, $size);
+@each $fontSize in $size {
+  .t-#{$fontSize} {
+    font-size: #{$fontSize}#{'px'} !important;
+  }
+}
+
+$widthPixelNameMap: (
+  "wp": "width",
+);
+@mixin generate($widthPixelNameMap: (), $size: ()) {
+  @each $preKey, $preValue in $widthPixelNameMap {
+    @each $pixel in $size {
+      .#{$preKey}-#{$pixel} {
+        #{$preValue}: #{$pixel}#{'px'} !important;
+      }
+    }
+  }
+}
+@include generate($widthPixelNameMap, $size);
+
+// sizing -------------------
+@function heightSize($start, $end) {
+  $heightSize: ();
+  @for $i from $start through $end {
+    $value: $i * 100;
+    $heightSize: append($heightSize, $value);
+  }
+  @return $heightSize;
+}
+$heightSize: heightSize(1, 10);
+$heightPixelNameMap: (
+  "hp": "height",
+);
+@mixin generate($heightPixelNameMap: (), $heightSize: ()) {
+  @each $preKey, $preValue in $heightPixelNameMap {
+    @each $pixel in $heightSize {
+      .#{$preKey}-#{$pixel} {
+        #{$preValue}: #{$pixel}#{'px'} !important;
+      }
+    }
+  }
+}
+@include generate($heightPixelNameMap, $heightSize);
+
+/* animation */
+.fadeInUp {
+  opacity: 0.1;
+  transform: translateY(50px);
+  transition: all 0.3s ease-in-out 0s;
+  &.active {
+    opacity: 1;
+    transform: translateY(0);
+  } 
+}
+
+.blink {filter: drop-shadow(8px 5px 4px #4444dd); transition: all 0.5s ease-in-out 0s, filter 0.2s ease-in-out 0s;}
+.h-auto {height: auto!important;}
+

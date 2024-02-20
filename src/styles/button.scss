@@ -1,0 +1,28 @@
+.button {
+  border: none;
+  border-radius: 7px;
+  background: #0062ff;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.25;
+  font-weight: bold;
+  padding: 8px 10px 6px;
+  &.icon {
+    &:disabled {
+      color: lightgrey;
+    }
+  }
+  &:not(:last-of-type) {
+    margin-right: 15px;
+  }
+  &.disable {
+    background: gray;
+  }
+  &:disabled {
+    background: gray;
+    cursor: not-allowed;
+  }
+  &.error {
+    background: #ff0000;
+  }
+}

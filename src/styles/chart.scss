@@ -1,0 +1,49 @@
+.vertical-bar-section {
+  transition: 0.5s;
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    margin: auto;
+    padding: 0 40px 0;
+  .vertical-bar-wrap {
+    border-radius: 10px;
+    padding: 30px 20px 10px;
+    height: 445px;
+    > div:first-of-type {
+      display: flex;
+      justify-content: flex-start;
+      h2 {
+        color: #fff;
+        span {
+          color: #53dc38;
+        }
+      }
+    }
+    .vertical-bar {
+      padding-top: 30px;
+      height: 350px;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      .bar-wrap {
+        height: 100%;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        .bar {
+          position: relative;
+          border-radius: 5px;
+          height: 0px;
+          transition: 0.4s;
+          width: 25px;
+          background: hsl(321, 100%, 35%);
+        }
+        .bar-tooltip {
+          position: absolute;
+          top: -50px;
+        }
+      }
+    }
+  }
+}
+

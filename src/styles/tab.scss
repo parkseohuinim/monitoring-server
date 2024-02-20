@@ -1,0 +1,27 @@
+.tab-wrap {
+  display: flex;
+  .tab {
+    overflow: hidden;
+    a {
+      background: #fff;
+      display: block;
+      color: #000;
+      font-weight: 900;
+      padding: 7px 15px;
+    }
+    &.active {
+      background: #ffd151;
+      a {
+        background: #ffd151;
+      }
+    }
+    &:first-of-type {
+      border-top-left-radius: 15px;
+      border-bottom-left-radius: 15px;
+    }
+    &:last-of-type {
+      border-top-right-radius: 15px;
+      border-bottom-right-radius: 15px;
+    }
+  }
+}

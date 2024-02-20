@@ -1,89 +1,75 @@
 'use client'
-import React, { useMemo } from "react";
-import {
-  Chart as ChartJS,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend,
-} from "chart.js";
-import { Bar } from "react-chartjs-2";
 
-ChartJS.register(
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  Title,
-  Tooltip,
-  Legend
-);
+import { useMemo } from "react"
+import VerticalBar from "../components/chart/VerticalBar"
 
-export const options = {
-  indexAxis: "y" as const,
-  elements: {
-    bar: {
-      borderWidth: 2,
-    },
-  },
-  responsive: true,
-  plugins: {
-    legend: {
-      display: false
-    },
-
-  },
-};
-
-interface MonitorProps {
-  takeExam: number;
-  excellentTest: number;
-  mentorProgram: number;
-  fieldTraining: number;
-  copyrightRegistration: number;
-  preliminaryCurriculum: number;
-  regularCurriculum: number;
-}
-export default function Monitor({
-  takeExam = 1,
-  excellentTest = 1,
-  mentorProgram = 1,
-  fieldTraining = 2,
-  copyrightRegistration = 2,
-  preliminaryCurriculum = 5,
-  regularCurriculum = 6
-}: MonitorProps) {
-  const labels = useMemo(() => {
-    return [
-      "치킨",
-      "피자",
-      "햄버거",
-      "크림 파스타",
-      "토마토 파스타",
-      "참치 회",
-      "든든한 국밥",
-    ]
-  }, []);
+export default function Monitor2({
+}) {
   const data = useMemo(() => {
     return {
-      labels,
-      datasets: [
+      title: '가장 맛있는 음식',
+      unit: '명',
+      chartData: [
         {
-          label: "점수",
-          data: [takeExam, excellentTest, mentorProgram, fieldTraining, copyrightRegistration, preliminaryCurriculum, regularCurriculum],
-          borderColor: "rgb(255, 99, 132)",
-          backgroundColor: "rgba(255, 99, 132, 0.5)",
+          label :'참치',
+          amount :32,
         },
-      ],
+        {
+          label :'피자',
+          amount :65,
+        },
+        {
+          label :'국밥',
+          amount :84,
+        },
+        {
+          label :'크림 파스타',
+          amount :91,
+        },
+        {
+          label :'토마토 파스타',
+          amount :12,
+        },
+        {
+          label :'연어초밥',
+          amount :1,
+        },
+        {
+          label :'참치 회',
+          amount :25,
+        },
+        {
+          label :'제육볶음',
+          amount :1,
+        },
+        {
+          label :'부대찌개',
+          amount :4,
+        },
+        {
+          label :'샐러드',
+          amount :0,
+        },
+        {
+          label :'과일',
+          amount :9,
+        },
+      ]
     }
-  }, []);
+  }, [])
   return (
-    <div className="">
-      <Bar
-        options={options}
-        data={data} />
-    </div>
+    <div style={{background: '#353535', paddingTop: 40}}>
+      <div className="mt-40">
+        <VerticalBar data={data} />
+      </div>
 
-  );
+      <div className="mt-40">
+        <VerticalBar data={data} />
+      </div>
+
+      <div className="mt-40">
+        <VerticalBar data={data} />
+      </div>
+    </div>
+  )
 }
