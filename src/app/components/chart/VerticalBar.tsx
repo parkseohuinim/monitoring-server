@@ -77,7 +77,7 @@ export default function VerticalBar({data = {
         else return acc
       }, 0)
       const newChartData = {...data, chartData: data.chartData.map((e,i,arr) => {
-        return e.amount && {...e, height: (e.amount / totalAmount * 100) + '%'}
+        return e.amount ? {...e, height: (e.amount / totalAmount * 100) + '%'} : {...e, height: '0%'}
       })}
       setBarData(newChartData)
     }
@@ -99,11 +99,12 @@ export default function VerticalBar({data = {
               barData.chartData.length &&
               barData.chartData.map((e,i,arr) => {
                 return (
-                  <div className="bar-wrap" key={'barData' + i}>
+                  <div className="bar-wrap" 
+                  key={'barData' + i}
+                  onMouseOver={() => handleMouseOver(i)}
+                  onMouseOut={handleMouseOut}>
                     <div className="bar" 
                     style={{height: e.height}}
-                    onMouseOver={() => handleMouseOver(i)}
-                    onMouseOut={handleMouseOut}
                     >
                       <Tooltip msg={`${e.label}: ${e.amount}`} active={e.tooltipActive} />
                     </div>
